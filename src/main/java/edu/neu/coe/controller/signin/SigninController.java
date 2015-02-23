@@ -1,4 +1,4 @@
-package edu.neu.coe.signin;
+package edu.neu.coe.controller.signin;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

@@ -1,14 +1,12 @@
-package edu.neu.coe.signup;
+package edu.neu.coe.controller.signup;
 
+import edu.neu.coe.config.WebAppConfigurationAware;
 import org.junit.Test;
 
 import static org.hamcrest.Matchers.allOf;
 import static org.hamcrest.Matchers.containsString;
-import static org.hamcrest.Matchers.equalTo;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
-
-import edu.neu.coe.config.WebAppConfigurationAware;
 
 public class SignupControllerTest extends WebAppConfigurationAware {
     @Test

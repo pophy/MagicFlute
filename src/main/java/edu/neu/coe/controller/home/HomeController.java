@@ -1,9 +1,10 @@
-package edu.neu.coe.home;
-
-import java.security.Principal;
+package edu.neu.coe.controller.home;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+import java.security.Principal;
 
 @Controller
 public class HomeController {
