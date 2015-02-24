@@ -1,6 +1,6 @@
 package edu.neu.coe.controller.signup;
 
-import edu.neu.coe.account.Account;
+import edu.neu.coe.model.Account;
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotBlank;
 

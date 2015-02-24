@@ -1,8 +1,8 @@
-package edu.neu.coe.account;
-
-import javax.persistence.*;
+package edu.neu.coe.model;
 
 import org.codehaus.jackson.annotate.JsonIgnore;
+
+import javax.persistence.*;
 
 @SuppressWarnings("serial")
 @Entity

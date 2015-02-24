@@ -1,8 +1,9 @@
 package edu.neu.coe.controller.signup;
 
-import edu.neu.coe.account.Account;
-import edu.neu.coe.account.AccountRepository;
-import edu.neu.coe.account.UserService;
+import edu.neu.coe.model.Party;
+import edu.neu.coe.repository.AccountRepository;
+import edu.neu.coe.repository.PartyRepository;
+import edu.neu.coe.service.UserService;
 import edu.neu.coe.support.web.MessageHelper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -22,9 +23,12 @@ public class SignupController {
 
 	@Autowired
 	private AccountRepository accountRepository;
-	
-	@Autowired
-	private UserService userService;
+
+    @Autowired
+    private PartyRepository partyRepository;
+
+    @Autowired
+    private UserService userService;
 	
 	@RequestMapping(value = "signup")
 	public String signup(Model model) {
@@ -37,8 +41,17 @@ public class SignupController {
 		if (errors.hasErrors()) {
 			return SIGNUP_VIEW_NAME;
 		}
-		Account account = accountRepository.save(signupForm.createAccount());
-		userService.signin(account);
+
+        Party party = new Party();
+        party.setFirstName("Jesse");
+        party.setLastName("Ge");
+        party.setGender(Party.Gender.FEMALE);
+        party.setTitle("Mrs");
+        party.setAlias("Jesse");
+
+        partyRepository.save(party);
+
+
         // see /WEB-INF/i18n/messages.properties and /WEB-INF/views/homeSignedIn.html
         MessageHelper.addSuccessAttribute(ra, "signup.success");
 		return "redirect:/";

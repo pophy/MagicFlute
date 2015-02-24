@@ -1,11 +1,14 @@
-package edu.neu.coe.account;
+package edu.neu.coe.repository;
 
-import javax.persistence.*;
-import javax.inject.Inject;
-
+import edu.neu.coe.model.Account;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.security.crypto.password.PasswordEncoder;
+
+import javax.inject.Inject;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.PersistenceException;
 
 @Repository
 @Transactional(readOnly = true)
